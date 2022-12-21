@@ -1,26 +1,17 @@
-cat << comment
-STEPS FOR INSTALLING MONGODB ON UBUNTU
-LET'S FIRST UPDATE THE MACHINE
+# STEPS FOR INSTALLING MONGODB ON UBUNTU
+# Updating The System 
 
-sudo apt-get update 
+sudo apt-get update
 
-comment 
-
-cat << comment
-  INSTALL GNUPG 
-comment
+#INSTALL GNUPG 
 
 sudo apt-get install gnupg -y 
 
-cat << comment 
-  Once Instllation is done run the following command 
-comment 
+# Once Instllation is done run the following command  
 
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
 
-cat << comment 
-  Create /etc/apt/sources.list.d/mongodb-org-5.0.list. I am adding this by using the touch command, you can create this file using your favorite editor.
-comment 
+# Create /etc/apt/sources.list.d/mongodb-org-5.0.list. I am adding this by using the touch command, you can create this file using your favorite editor.
 
 sudo cd /etc/apt/sources.list.d/
 
@@ -36,17 +27,13 @@ wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubun
 
 dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb 
 
-cat << comment 
- Finally, update the system after adding the repo and installing MongoDB.
-comment 
+# Finally, update the system after adding the repo and installing MongoDB.
 
 sudo apt-get update 
 
 sudo apt install -y mongodb-org
-
-cat << comment 
- Start The Mongo Service 
-comment 
+ 
+# Start The Mongo Service 
 
 systemctl start mongod
 
